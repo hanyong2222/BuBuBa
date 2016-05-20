@@ -1,0 +1,63 @@
+//
+//  pch.pch
+//  BuBuBa
+//
+//  Created by goulela on 16/5/18.
+//  Copyright © 2016年 bububa. All rights reserved.
+//
+
+#ifndef pch_pch
+#define pch_pch
+
+//=============基本设置============//
+
+//屏幕的长和宽
+#define MCScreenWidth [UIScreen mainScreen].bounds.size.width
+#define MCScreenHeight [UIScreen mainScreen].bounds.size.height
+// 字体
+#define MCFont(size) [UIFont systemFontOfSize:size]
+
+//DebugLog
+#define MCLogDebug(fmt, ...) NSLog((@"[line:%d] " "%s "  fmt),__LINE__, __FUNCTION__,  ##__VA_ARGS__);
+
+// 颜色
+#define MCUIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//深灰色
+#define MCUIColorGray           MCUIColorFromRGB(0x333333)
+//中灰色
+#define MCUIColorMiddleGray     MCUIColorFromRGB(0x999999)
+//浅灰色
+#define MCUIColorLightGray      MCUIColorFromRGB(0xf0f0f0)
+//橘色
+#define MCUIColorOrange         MCUIColorFromRGB(0xf0816b)
+//紫色
+#define MCUIColorPurple         MCUIColorFromRGB(0x6a577c)
+//蓝色
+#define MCUIColorLightBlue      MCUIColorFromRGB(0x008cee)
+//绿色
+#define MCUIColorGreen          MCUIColorFromRGB(0x56b392)
+//红色
+#define MCUIColorRed            [UIColor colorWithRed:245.0/255.0 green:94.0/255.0 blue:78.0/255.0 alpha:1.0f]
+//蓝色
+#define MCUIColorBlue           [UIColor colorWithRed:82.0/255.0 green:116.0/255.0 blue:188.0/255.0 alpha:1.0f]
+//黄色
+#define MCUIColorYellow         [UIColor colorWithRed:242.0/255.0 green:197.0/255.0 blue:117.0/255.0 alpha:1.0f]
+//白色
+#define MCUIColorWhite          YYUIColorFromRGB(0xffffff)
+
+
+//==============自定义库=============//
+#import "MCTool.h"
+
+
+//==============第三方库=============//
+// 页面布局
+#import "Masonry.h"
+// 网络请求
+#import "AFNetworking.h"
+// 清理图片缓冲
+#import "UIImageView+WebCache.h"
+
+
+#endif /* pch_pch */
